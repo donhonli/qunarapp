@@ -3,6 +3,7 @@
         <swiper ref="mySwiper" :options="swiperOptions">
             <swiper-slide v-for="(item) in page" :key="item.index">
                 <div class="icons-item" v-for="item in item" :key="item.id">
+                    
                     <img :src="item.imgUrl" alt="">
                     <p>{{item.title}}</p>
                 </div>
@@ -97,10 +98,14 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style scoped lang="stylus">
+@import '~css/var.styl'
 .icons{
     width: 100%;
-    /* overflow: hidden; */
+   position: relative;
+   overflow hidden;
+   
+   
     
 }
 .icons-item{
@@ -123,5 +128,17 @@ export default {
     text-align: center;
     color: #212121;
 }
-
+.icons >>>.swiper-pagination-bullet-active{
+    background-color: $bgColor;
+    
+}
+.swiper-pagination-bullets{
+    position: absolute;
+    margin-bottom :-.3rem;
+    
+   
+}
+.swiper-container{
+    height:4rem;
+}
 </style>
