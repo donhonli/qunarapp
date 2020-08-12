@@ -26,70 +26,72 @@
 </template>
 <script>
 export default {
+    props:['hotList'],
     data(){
         return{
-            hotList:[
-                {
-                    id:'01',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"神仙居",
-                    mark:"100"
-                },
-                {
-                    id:'02',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"蛇蟠岛",
-                    mark:"79"
-                },
-                {
-                    id:'03',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"仙人谷漂流",
-                    mark:"99"
-                },
-                {
-                    id:'04',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"台州府城（江南长城）",
-                    mark:"14.5"
-                },
-                {
-                    id:'05',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"天台龙穿峡漂流",
-                    mark:"110"
-                },
-                {
-                    id:'06',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"台州湾野生动物园",
-                    mark:"91.5"
-                },
-                {
-                    id:'07',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"天台山风景区",
-                    mark:"15"
-                },
-                {
-                    id:'08',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"玉环大鹿岛",
-                    mark:"44"
-                },
-                {
-                    id:'09',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
-                    title:"天台山琼台仙谷",
-                    mark:"66"
-                }
+            // hotList:[
+            //     {
+            //         id:'01',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"神仙居",
+            //         mark:"100"
+            //     },
+            //     {
+            //         id:'02',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"蛇蟠岛",
+            //         mark:"79"
+            //     },
+            //     {
+            //         id:'03',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"仙人谷漂流",
+            //         mark:"99"
+            //     },
+            //     {
+            //         id:'04',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"台州府城（江南长城）",
+            //         mark:"14.5"
+            //     },
+            //     {
+            //         id:'05',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"天台龙穿峡漂流",
+            //         mark:"110"
+            //     },
+            //     {
+            //         id:'06',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"台州湾野生动物园",
+            //         mark:"91.5"
+            //     },
+            //     {
+            //         id:'07',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"天台山风景区",
+            //         mark:"15"
+            //     },
+            //     {
+            //         id:'08',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"玉环大鹿岛",
+            //         mark:"44"
+            //     },
+            //     {
+            //         id:'09',
+            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1506/37/df46ee292f148f81ef615f97c1349ad8.water.jpg_250x250_e39581ab.jpg",
+            //         title:"天台山琼台仙谷",
+            //         mark:"66"
+            //     }
                
-            ]
+            // ]
         }
     }
 }
 </script>
-<style scoped>
+<style scoped lang="stylus">
+@import '~css/common.styl' 
 .hot{
 
     border-top: .2rem solid #f5f5f5;
@@ -111,8 +113,7 @@ export default {
     font-size: .24rem;
 }
 .hot-list{
-    overflow-x: scroll;
-    
+    overflow :hidden;
     white-space: nowrap;
     height: 3.2rem;
 }
@@ -131,6 +132,7 @@ export default {
 .hot-item p{
     margin-top: .1rem;
     text-align: center;
+    textOverflow();
 }
 .hot-item span{
     color: #ff8300;
@@ -167,5 +169,8 @@ export default {
     position: absolute;
     background-size: 100%;
     
+}
+.hot-list:hover{
+    overflow-x:scroll;
 }
 </style>

@@ -16,8 +16,10 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'css/swiper.css'
 // If you use Swiper 6.0.0 or higher
 import 'swiper/swiper-bundle.css'
-
 Vue.use(VueAwesomeSwiper)
+// 引入axios
+import axios from 'axios'
+Vue.prototype.axios = axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

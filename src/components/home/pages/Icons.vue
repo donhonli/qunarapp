@@ -19,6 +19,7 @@
 </template>
 <script>
 export default {
+    props:['iconsList'],
     data(){
         return{
             swiperOptions: {
@@ -28,58 +29,58 @@ export default {
                 },
             // Some Swiper option/callback...
             },
-            iconsList:[
-                {
-                    id:"01",
-                    title:"景点门票",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
-                },
-                {
-                    id:"02",
-                    title:"一日游",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png"
-                },
-                {
-                    id:"03",
-                    title:"踏青赏花",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png"
-                },
-                {
-                    id:"04",
-                    title:"动植物园",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png"
-                },
-                {
-                    id:"05",
-                    title:"珠江夜游",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png"
-                },
-                {
-                    id:"06",
-                    title:"城市观光",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/b6/37560ece9c62b502.png"
-                },
-                {
-                    id:"07",
-                    title:"主题乐园",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png"
-                },
-                {
-                    id:"08",
-                    title:"泡温泉",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png"
-                },
-                {
-                    id:"09",
-                    title:"景点门票",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
-                },
-                {
-                    id:"10",
-                    title:"景点门票",
-                    imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
-                },
-            ]
+            // iconsList:[
+            //     {
+            //         id:"01",
+            //         title:"景点门票",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
+            //     },
+            //     {
+            //         id:"02",
+            //         title:"一日游",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png"
+            //     },
+            //     {
+            //         id:"03",
+            //         title:"踏青赏花",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png"
+            //     },
+            //     {
+            //         id:"04",
+            //         title:"动植物园",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png"
+            //     },
+            //     {
+            //         id:"05",
+            //         title:"珠江夜游",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png"
+            //     },
+            //     {
+            //         id:"06",
+            //         title:"城市观光",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/b6/37560ece9c62b502.png"
+            //     },
+            //     {
+            //         id:"07",
+            //         title:"主题乐园",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png"
+            //     },
+            //     {
+            //         id:"08",
+            //         title:"泡温泉",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png"
+            //     },
+            //     {
+            //         id:"09",
+            //         title:"景点门票",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
+            //     },
+            //     {
+            //         id:"10",
+            //         title:"景点门票",
+            //         imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
+            //     },
+            // ]
         }
     },
     computed:{
@@ -92,7 +93,7 @@ export default {
                 }
                 pages[idx].push(item)
             })
-            console.log(pages);
+            
             return pages;
         }
     }
@@ -100,6 +101,7 @@ export default {
 </script>
 <style scoped lang="stylus">
 @import '~css/var.styl'
+@import '~css/common.styl'
 .icons{
     width: 100%;
    position: relative;
@@ -127,6 +129,7 @@ export default {
     font-size: .28rem;
     text-align: center;
     color: #212121;
+    textOverflow();
 }
 .icons >>>.swiper-pagination-bullet-active{
     background-color: $bgColor;

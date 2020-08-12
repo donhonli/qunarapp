@@ -13,22 +13,23 @@
 </template>
 <script>
 export default {
+    props:['swiperList'],
     data() {
         return {
-            swiperList:[
-                {
-                    id:1,
-                    imgUrl:require("@/assets/img/swiper1.jpg")
-                },
-                 {
-                    id:2,
-                    imgUrl:require("@/assets/img/swiper2.jpg")
-                },
-                 {
-                    id:3,
-                    imgUrl:require("@/assets/img/swiper3.jpg")
-                }
-            ],
+            // swiperList:[
+            //     {
+            //         id:1,
+            //         imgUrl:require("@/assets/img/swiper1.jpg")
+            //     },
+            //      {
+            //         id:2,
+            //         imgUrl:require("@/assets/img/swiper2.jpg")
+            //     },
+            //      {
+            //         id:3,
+            //         imgUrl:require("@/assets/img/swiper3.jpg")
+            //     }
+            // ],
             swiperOptions: {
                 loop:true,
                 pagination: {

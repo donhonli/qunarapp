@@ -6,8 +6,11 @@
     <div class="header-search">
         <i class="iconfont">&#xe60c;</i>输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-        北京<i class="iconfont">&#xe6aa;</i>
+    <div class="header-right" >
+        <router-link to='/city'>
+            北京<i class="iconfont">&#xe6aa;</i>
+        </router-link>
+        
     </div>
 </div>    
 </template>
@@ -50,5 +53,8 @@ export default {
 }
 .iconfont{
     font-size: .36rem;
+}
+.header-right a{
+    color :#fff;
 }
 </style>
