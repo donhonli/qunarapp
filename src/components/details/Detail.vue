@@ -1,6 +1,8 @@
 <template>
     <div>
         <Banner></Banner>
+        <Header></Header>
+        <div style="height:100rem"></div>
     </div>
 </template>
 <script>
@@ -10,6 +12,13 @@ export default {
     components:{
         Banner,
         Header
+    },
+    activated(){
+        if(document.documentElement.scrollTop){
+            document.documentElement.scrollTop = 0;
+        }else{
+            document.body.scrollTop = 0;
+        }
     }
 }
 </script>

@@ -65,9 +65,7 @@ export default {
         },
         changeCityName(cityName){
             this.changeStr(cityName);
-            this.$router.push({
-                path:'/'
-            })
+            this.$router.push('/');
         },
         ...mapMutations(['changeStr'])
         
