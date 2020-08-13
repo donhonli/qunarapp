@@ -17,6 +17,7 @@ import HomeLocation from './pages/Location'
 import HomeHot from './pages/Hot'
 import HomeLike from './pages/Like'
 import HomeVacation from './pages/Vacation'
+import {mapState} from 'vuex'
 export default {
     components:{
         HomeHeader,
@@ -33,23 +34,45 @@ export default {
             iconsList:[],
             hotList:[],
             likeList:[],
-            vacationList:[]
+            vacationList:[],
+            changecity:''
         }
     },
     mounted(){
+        this.changecity = this.city;
         this.http();
+    },
+    activated(){
+        if(this.changecity != this.city){
+            this.http();
+            this.changecity = this.city;
+        }
+    },
+    computed:{
+        ...mapState(['city'])
     },
     methods:{
         http(){
             let that = this;
             that.axios.get("/api/dataHome.json")
                 .then((res)=>{
-                    let data = res.data.data[0];
-                    that.swiperList = data.swiperList;
-                    that.iconsList = data.iconsList;
-                    that.likeList = data.likeList;
-                    that.vacationList = data.vacationList;
-                    that.hotList = data.hotList;
+                    let data = res.data.data;
+                    data.forEach((item,index) => {
+                        if(item.city == that.city){
+                            that.swiperList = item.swiperList;
+                            that.iconsList = item.iconsList;
+                            that.likeList = item.likeList;
+                            that.vacationList = item.vacationList;
+                            that.hotList = item.hotList;
+                    
+                        }else{
+                            that.swiperList = data[0].swiperList;
+                            that.iconsList = data[0].iconsList;
+                            that.likeList = data[0].likeList;
+                            that.vacationList = data[0].vacationList;
+                            that.hotList = data[0].hotList;
+                        }
+                    });
                     
                 })
         }

@@ -4,7 +4,9 @@
         <div class="hot">
             <div class="hot-title">热门城市</div>
             <ul class="hot-list">
-                <li class="hot-item" v-for="item in hotCities" :key="item.id">
+                <li class="hot-item" v-for="item in hotCities" :key="item.id"
+                    @click="changeCityName(item.name)"
+                >
                     {{item.name}}
                 </li>
                 
@@ -13,25 +15,37 @@
         <div class="sort">
             <div class="sort-title">字母排序</div>
             <ul class="sort-list">
-                <li class="sort-item" v-for="(val,key) in cities" :key="key" >{{key}}</li>
+                <li 
+                    class="sort-item" 
+                    v-for="(val,key) in cities" 
+                    :key="key" 
+                    @click="changeSort(key)"
+                >
+                        {{key}}
+                    </li>
                     
             </ul>
         </div>
         <div class="list">
-            <div v-for="(val,key) in cities" :key="key">
+            <div v-for="(val,key) in cities" :key="key" :ref="key">
                 <div class="list-title">{{key}}</div>
                 <ul>
-                    <li class="list-item" v-for="item in val" :key="item.id">{{item.name}}</li>
+                    <li class="list-item" 
+                    v-for="item in val" 
+                    :key="item.id"
+                    @click="changeCityName(item.name)">{{item.name}}</li>
                 
                 </ul>
             </div>
 
         </div>
     </div>
+    
 </div>
 </template>
 <script>
 import BScroll from 'better-scroll'
+import {mapMutations} from 'vuex'
 export default {
     props:['cities','hotCities'],
     data(){
@@ -44,13 +58,27 @@ export default {
         let container = this.$refs['container'];
         this.scroll = new BScroll(container)
     },
+    methods:{
+        changeSort(sortName){
+            
+            this.scroll.scrollToElement(this.$refs[sortName][0],1000);
+        },
+        changeCityName(cityName){
+            this.changeStr(cityName);
+            this.$router.push({
+                path:'/'
+            })
+        },
+        ...mapMutations(['changeStr'])
+        
+    }
 }
 </script>
 <style scoped lang="stylus">
 @import '~css/common.styl'
 .container{
     position:absolute;
-    overflow :hidden;
+    overflow:hidden;
     left:0;
     right:0;
     bottom:0;
@@ -96,7 +124,7 @@ export default {
     }
     .sort-item{
         height: .9rem;
-        width: 1.25rem;
+        width: 16.6666667%;
         text-align: center;
         line-height: .9rem;
         font-size: .28rem;

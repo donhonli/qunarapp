@@ -8,15 +8,18 @@
     </div>
     <div class="header-right" >
         <router-link to='/city'>
-            北京<i class="iconfont">&#xe6aa;</i>
+            {{city}}<i class="iconfont">&#xe6aa;</i>
         </router-link>
         
     </div>
 </div>    
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
-    
+    computed:{
+        ...mapState(['city'])
+    }
 }
 </script>
 <style scoped lang='stylus'>

@@ -113,9 +113,10 @@ export default {
     font-size: .24rem;
 }
 .hot-list{
-    overflow :hidden;
+    overflow-x:scroll;
+    overflow-y :hidden;
     white-space: nowrap;
-    height: 3.2rem;
+    height: 3.4rem;
 }
 .hot-item{
     padding: 0 .2rem;
@@ -170,7 +171,7 @@ export default {
     background-size: 100%;
     
 }
-.hot-list:hover{
-    overflow-x:scroll;
-}
+// .hot-list:hover{
+//     overflow-x:scroll;
+// }
 </style>

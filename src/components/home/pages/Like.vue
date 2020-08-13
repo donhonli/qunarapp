@@ -5,7 +5,10 @@
             猜你喜欢
         </div>
         <ul class="like-bottom">
-            <li class="like-item" v-for="item in likeList" :key="item.id">
+            <li class="like-item" 
+            v-for="item in likeList" 
+            :key="item.id"
+            @click="toDetails">
                 <div class="like-img">
                     <img :src="item.imgUrl" alt="">
                 </div>
@@ -32,32 +35,14 @@ export default {
     props:['likeList'],
     data(){
         return{
-            // likeList:[
-            //     {
-            //         id:'01',
-            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/201301/17/a02bd52c34d1c59f93835fbb.jpg_200x200_9fb02815.jpg",
-            //         title:"淡竹原始森林",
-            //         msg:"1341",
-            //         pre:"45",
-            //         map:"仙居"
-            //     },
-            //     {
-            //         id:'02',
-            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/201406/06/a44369bc74c861237cdc6446ae322949.jpg_200x200_4feba072.jpg",
-            //         title:"淡竹原始森林",
-            //         msg:"1341",
-            //         pre:"45",
-            //         map:"仙居"
-            //     },
-            //     {
-            //         id:'03',
-            //         imgUrl:"https://imgs.qunarzz.com/sight/p0/1604/78/786765192063ed7690.img.jpg_200x200_e5a2a6cc.jpg",
-            //         title:"淡竹原始森林",
-            //         msg:"1341",
-            //         pre:"45",
-            //         map:"仙居"
-            //     },
-            // ]
+          
+        }
+    },
+    methods:{
+        toDetails(){
+            this.$router.push({
+                path:'/detail'
+            })
         }
     }
 }
