@@ -15,7 +15,15 @@ export default {
 
         List
     },
+    activated() {
+        if(document.documentElement.scrollTop){
+            document.documentElement.scrollTop = 0;
+        }else{
+            document.body.scrollTop = 0;
+        }
+    },
     mounted(){
+        
         this.axios.get('/api/city.json')
             .then((res)=>{
                 let data = res.data.data;
